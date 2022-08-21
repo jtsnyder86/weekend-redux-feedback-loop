@@ -5,7 +5,7 @@ import { useDispatch } from 'react-redux'
 import { useSelector } from 'react-redux'
 import axios from "axios";
 // import DataGrid from '@mui/x-data-grid';
-import Button from '@material-ui/core'
+import {Button} from '@material-ui/core'
 
 
 function Review() {
@@ -47,7 +47,10 @@ function Review() {
             <p>Understanding: {review.understanding}</p>
             <p>Support: {review.support}</p>
             <p>Comments: {review.comments}</p>
-            <button onClick={handleSubmit}>Submit!</button>
+            <Button 
+            onClick={handleSubmit}
+            variant='contained'
+            color='primary'>Submit!</Button>
         </>
     )
 }

@@ -22,6 +22,14 @@ h4 {
   font-style: italic;
 }
 
-input{
-  width: 160px;
+#input {
+  width: 220px;
+}
+
+#inputComment {
+  width: 250px;
+}
+
+#button {
+  margin-top: 25px;
 }

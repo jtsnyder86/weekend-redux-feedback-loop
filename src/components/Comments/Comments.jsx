@@ -1,7 +1,9 @@
 import React from "react";
-import {useState} from 'react';
-import {useHistory} from 'react-router-dom';
-import {useDispatch} from 'react-redux'
+import { useState } from 'react';
+import { useHistory } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { TextField } from '@material-ui/core';
+import { Button } from '@material-ui/core'
 
 
 function Comments() {
@@ -10,7 +12,7 @@ function Comments() {
     const dispatch = useDispatch();
     const history = useHistory('');
 
-   
+
 
     const submitComment = (event) => {
         event.preventDefault();
@@ -23,17 +25,22 @@ function Comments() {
 
     return (
         <>
-        <h1>How are you feeling today?</h1>
-        <form onSubmit={(event) => submitComment(event)}>
-            <input
-            onChange={(event) => setAddFeedback (event.target.value)} 
-            type="text"
-            placeholder="Tell me what's on your mind..." 
-            value={addFeedback.comment}
-            />
-
-            <button type="submit">Next</button>
-        </form>
+            <h1>How are you commenting today?</h1>
+            <form onSubmit={(event) => submitComment(event)}>
+                <TextField
+                    id="inputComment"
+                    onChange={(event) => setAddFeedback(event.target.value)}
+                    type="text"
+                    label="Tell me what's on your mind..."
+                    value={addFeedback.comment}
+                />
+                <br />
+                <Button
+                    id='button'
+                    variant='contained'
+                    color='primary'
+                    type="submit">Next</Button>
+            </form>
         </>
 
     )

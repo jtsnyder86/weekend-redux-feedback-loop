@@ -8,8 +8,8 @@ import axios from "axios";
 
 function Review() {
 
-    cosnt history = useHistory();
-
+    const history = useHistory();
+    const dispatch = useDispatch();
     const review = useSelector((store) => store.feedbackReducer);
 
     const objectToSend = {
@@ -23,11 +23,13 @@ function Review() {
         axios.post('/api/feedback', objectToSend)
             .then(response => {
                 console.log(response.data);
-                alert('Your submission is complete!')
-                dispatchEvent({
+                alert('Your submission is complete!');
+                dispatch({
                     type: ''
                 });
-                history.pushState('/')
+                history.push('/');
+            }).catch( err => {
+                console.log(err);
             })
 
 

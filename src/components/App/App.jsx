@@ -7,6 +7,7 @@ import Support from '../Support/Support';
 import Comments from '../Comments/Comments';
 import Review from '../Review/Review';
 import { HashRouter as Router, Route, Link } from 'react-router-dom'
+import '@fontsource/roboto';
 
 function App() {
 

@@ -4,6 +4,8 @@ import { useHistory } from 'react-router-dom';
 import { useDispatch } from 'react-redux'
 import { useSelector } from 'react-redux'
 import axios from "axios";
+// import DataGrid from '@mui/x-data-grid';
+import Button from '@material-ui/core'
 
 
 function Review() {
@@ -28,7 +30,7 @@ function Review() {
                     type: ''
                 });
                 history.push('/');
-            }).catch( err => {
+            }).catch(err => {
                 console.log(err);
             })
 
@@ -40,7 +42,7 @@ function Review() {
 
     return (
         <>
-            <h1>Review</h1>
+            <h1>Review</h1>            
             <p>Feeling: {review.feeling}</p>
             <p>Understanding: {review.understanding}</p>
             <p>Support: {review.support}</p>
